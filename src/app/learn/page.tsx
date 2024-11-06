@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from '../components/learn/Sidebar'
 import FAQ from '../components/learn/FAQ'
 
 const Learn = () => {
