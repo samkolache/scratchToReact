@@ -1,0 +1,146 @@
+3:"$Sreact.fragment"
+4:I[9275,[],""]
+5:I[1343,[],""]
+6:I[5649,["231","static/chunks/231-2e170dd52b2d3c0c.js","503","static/chunks/503-ff2f840bb494b160.js","377","static/chunks/app/learn/layout-8daa011e0e687f31.js"],"default"]
+7:I[231,["401","static/chunks/363642f4-37d2bfdb0e1a0d51.js","344","static/chunks/e58a7f8f-7a63688bb10233d9.js","762","static/chunks/762-6d6f87dd77a87789.js","231","static/chunks/231-2e170dd52b2d3c0c.js","131","static/chunks/app/learn/nav-dropdown/page-066d694c4af5c7f9.js"],""]
+8:I[8173,["231","static/chunks/231-2e170dd52b2d3c0c.js","503","static/chunks/503-ff2f840bb494b160.js","377","static/chunks/app/learn/layout-8daa011e0e687f31.js"],"Image"]
+9:I[3969,["401","static/chunks/363642f4-37d2bfdb0e1a0d51.js","344","static/chunks/e58a7f8f-7a63688bb10233d9.js","762","static/chunks/762-6d6f87dd77a87789.js","231","static/chunks/231-2e170dd52b2d3c0c.js","131","static/chunks/app/learn/nav-dropdown/page-066d694c4af5c7f9.js"],"Sandpack"]
+c:I[3120,[],"OutletBoundary"]
+e:I[3120,[],"MetadataBoundary"]
+10:I[3120,[],"ViewportBoundary"]
+12:I[6130,[],""]
+1:HL["/scratchToReact/_next/static/media/dba81c1208da12ee-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+2:HL["/scratchToReact/_next/static/css/2996069477df107f.css","style"]
+a:T5f9,<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+        <p>Logo</p>
+        <div class = "right-cont">
+          <ul class = "nav-links">
+            <li><a href = "/home">Home</a></li>
+            <li><a href = "/about">About</a></li>
+            <li>
+              <div class = "nav-dropdown" role = "button">
+                 <a href = "/blog">Blog</a>
+                 <svg id = "chevron" xmlns="http://www.w3.org/2000/svg" 
+                 fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                 width = "15px" height = "15px">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+                <div class="dropdown close" role = "dropdown-menu">
+                  <ul class = "drop-links ">
+                     <li><a href = "/item-1">Item #1</a></li>
+                     <li><a href = "/item-2">Item #2</a></li>
+                     <li><a href = "/item-3">Item #3</a></li>
+                  </ul>
+               </div>
+              </div>
+          </li>
+          </ul>
+          <div class = "button-cont">
+            <button class = "sign-in-btn">Sign in</button>
+            <button>Sign up</button>
+          </div>
+        </div>
+    </nav>
+<script src="script.js"></script>
+</body>
+</html>b:T50b,* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px
+  }
+  
+  a {
+    text-decoration: none;   
+    color: inherit; 
+    cursor: pointer;
+  }
+  
+  nav > p {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-weight: semi-bold;
+  }
+  
+  .nav-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+  .rotate {
+    transform: rotate(180deg);
+  }
+  
+  
+  .right-cont {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+  }
+  
+  .button-cont {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .sign-in-btn {
+    border: 1px solid;
+    background: none;
+  }
+  
+  button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    max-width: 6rem;
+    padding: 10px 10px;
+    position: absolute;
+    top:40px;
+  }
+  
+  .dropdown.close {
+    display: none;
+  }
+  
+  .drop-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-weight: semi-bold;
+  }0:{"P":null,"b":"IKYxjdGrTeYsI2RVtZDcB","p":"/scratchToReact","c":["","learn","nav-dropdown"],"i":false,"f":[[["",{"children":["learn",{"children":["nav-dropdown",{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$3","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/scratchToReact/_next/static/css/2996069477df107f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__className_ba3080","children":["$","body",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]}]]}],{"children":["learn",["$","$3","c",{"children":[null,[["$","$L6",null,{}],["$","div",null,{"className":"grid grid-cols-[auto,1fr]","children":[["$","div",null,{"className":"flex flex-col min-h-screen space-y-5 border-r w-72 p-4","children":[["$","h2",null,{"className":"text-xl font-bold","children":"Components List"}],["$","div",null,{"children":[["$","h3",null,{"className":"text-lg font-semibold","children":"Navigation"}],["$","ul",null,{"className":"pl-2","children":[["$","li",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 16 16","fill":"currentColor","aria-hidden":"true","data-slot":"icon","ref":"$undefined","aria-labelledby":"$undefined","className":"w-4 h-4 text-yellow-500","children":[null,["$","path",null,{"fillRule":"evenodd","d":"M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z","clipRule":"evenodd"}]]}],["$","$L7",null,{"href":"/learn/basic-nav","children":"Basic NavBar"}]]}],["$","li",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 16 16","fill":"currentColor","aria-hidden":"true","data-slot":"icon","ref":"$undefined","aria-labelledby":"$undefined","className":"w-4 h-4 text-yellow-500","children":[null,["$","path",null,{"fillRule":"evenodd","d":"M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z","clipRule":"evenodd"}]]}],["$","$L7",null,{"href":"/learn/nav-dropdown","children":"NavBar with Dropdown"}]]}],["$","li",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 16 16","fill":"currentColor","aria-hidden":"true","data-slot":"icon","ref":"$undefined","aria-labelledby":"$undefined","className":"w-4 h-4 text-yellow-500","children":[null,["$","path",null,{"fillRule":"evenodd","d":"M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z","clipRule":"evenodd"}]]}],["$","$L7",null,{"href":"/learn/resp-nav","children":"Responsive Navbar"}]]}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-lg font-semibold","children":"Data Display"}],["$","ul",null,{"className":"pl-2","children":[["$","li",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 16 16","fill":"currentColor","aria-hidden":"true","data-slot":"icon","ref":"$undefined","aria-labelledby":"$undefined","className":"w-4 h-4 text-yellow-500","children":[null,["$","path",null,{"fillRule":"evenodd","d":"M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z","clipRule":"evenodd"}]]}],["$","$L7",null,{"href":"/learn/card","children":"Card"}]]}],["$","li",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 16 16","fill":"currentColor","aria-hidden":"true","data-slot":"icon","ref":"$undefined","aria-labelledby":"$undefined","className":"w-4 h-4 text-yellow-500","children":[null,["$","path",null,{"fillRule":"evenodd","d":"M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z","clipRule":"evenodd"}]]}],["$","$L7",null,{"href":"/learn/modal","children":"Modal"}]]}],["$","li",null,{"className":"flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 16 16","fill":"currentColor","aria-hidden":"true","data-slot":"icon","ref":"$undefined","aria-labelledby":"$undefined","className":"w-4 h-4 text-yellow-500","children":[null,["$","path",null,{"fillRule":"evenodd","d":"M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393 3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293 1.41-3.393A.75.75 0 0 1 8 1.75Z","clipRule":"evenodd"}]]}],["$","$L7",null,{"href":"/learn/accordion","children":"Accordion"}]]}]]}]]}]]}],["$","main",null,{"className":"mt-12","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","learn","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]]}],["$","div",null,{"className":"flex justify-center border-t ","children":["$","div",null,{"className":"flex flex-col items-center py-4 space-y-2","children":[["$","p",null,{"className":"text-lg font-semibold","children":"Made by Sam Kotecha"}],["$","a",null,{"href":"https://www.linkedin.com/in/sameer-z-kotecha/","children":["$","$L8",null,{"src":"/linkedin-logo.svg","alt":"linkedin logo","width":50,"height":50}]}],["$","ul",null,{"className":"flex items-center space-x-8","children":[["$","li",null,{"children":["$","$L7",null,{"href":"/about","children":"About"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/about","children":"Learn"}]}]]}]]}]}]]]}],{"children":["nav-dropdown",["$","$3","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","learn","children","nav-dropdown","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]]}],{"children":["__PAGE__",["$","$3","c",{"children":[["$","div",null,{"children":["$","div",null,{"className":"ml-16","children":[["$","div",null,{"className":"max-w-3xl space-y-4","children":[["$","h1",null,{"className":"text-5xl font-bold","children":"Creating a Navigation Bar with dropdown using HTML, CSS, and Javascript"}],["$","div",null,{"children":[["$","h2",null,{"className":"text-3xl font-semibold","children":"What you'll learn"}],["$","ul",null,{"className":"list-disc pl-6 pt-2","children":[["$","li","0",{"children":"DOM Manipulation and Event Handling"}],["$","li","1",{"children":"How to use Flexbox to create the basic layout"}],["$","li","2",{"children":"HTML Semantics"}],["$","li","3",{"children":" CSS Positioning"}]]}]]}],["$","div",null,{"children":[["$","h2",null,{"className":"text-3xl font-semibold","children":"Prerequisites"}],["$","ul",null,{"className":"list-disc pl-6 pt-2","children":[["$","li","0",{"children":"Basic HTML, CSS, and Javascript"}],["$","li","1",{"children":["Completed the ",["$","$L7",null,{"href":"/learn/basic-nav","className":"underline","children":"Basic Navbar"}]," tutorial"]}]]}]]}],["$","hr",null,{}]]}],["$","div",null,{"className":"mt-12","children":[["$","h2",null,{"className":"text-3xl font-bold mb-4","children":"The Code"}],["$","div",null,{"children":["$","$L9",null,{"template":"static","files":{"/index.html":{"code":"$a"},"/style.css":{"code":"$b"},"/script.js":{"code":"const dropdown = document.querySelector('.dropdown') \nconst blogItem = document.querySelector('.nav-dropdown') \nconst chevron = document.getElementById('chevron')\n\nblogItem.addEventListener(\"click\", (e) => {\n  dropdown.classList.toggle(\"close\");\n  chevron.classList.toggle(\"rotate\");\n})"}}}]}]]}],["$","div",null,{"className":"mt-12 mb-12 space-y-6","children":[["$","h2",null,{"className":"text-3xl font-bold","children":"Explanation"}],["$","div",null,{"children":[["$","h3",null,{"className":"text-2xl font-semibold text-brandOrange","children":"HTML"}],["$","ul",null,{"className":"list-disc pl-6 max-w-4xl","children":[["$","li","0",{"className":"mt-2","children":"We are using the same HTML from our previous lesson, with a few additions. We want to create a dropdown under our blog nav-link. We will create a flex container in our <ul> to hold our Blog link and a toggle button."}],["$","li","1",{"className":"mt-2","children":"Within this same container, we will create our dropdown menu, which also includes an <ul> of some different nav links. The reason we created this in the same container is because of our plan to use positioning to correctly place our dropdown. More on that below!"}],["$","li","2",{"className":"mt-2","children":"You may also notice some 'role' attributes added to our container and dropdown container. This allows screen readers to correctly identify what exactly our elements do."}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-2xl font-semibold text-brandBlue","children":"CSS"}],["$","ul",null,{"className":"list-disc pl-6 max-w-4xl","children":[["$","li","0",{"className":"mt-2","children":"We also have the same CSS but with a few changes. Our flex container mentioned previously is created with the 'nav-dropdown' class, with our basic flexbox styling."}],["$","li","1",{"className":"mt-2","children":"For our dropdown menu, we create a class called 'dropdown', with some good old styling and a position of absolute. If you look at our original 'right-cont' class, we added a relative positioning as well. This will allow us to position our dropdown menu relatively to our container."}],["$","li","2",{"className":"mt-2","children":"Our dropdown menu also has a class of close, which will be an added default class to hide our dropdown menu(more on this in JS). We also have a 'rotate' class that will be used to rotate the toggle button."}],["$","li","3",{"className":"mt-2","children":"We also add some basic styling to our nav-links, to make sure they look organized."}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-2xl font-semibold text-brandYellow","children":"Javascript"}],["$","ul",null,{"className":"list-disc pl-6 max-w-4xl","children":[["$","li","0",{"className":"mt-2","children":"Our JS is fairly simple, we use the query and ID DOM selectors to store our HTML elements in JS variables. Our elements include the dropdown menu, our toggle button(blog div), and our SVG chevron."}],["$","li","1",{"className":"mt-2","children":"We add a simple eventListener that toggles and untoggles the close class whenever our toggle button is clicked. We will also toggle the rotate class we had before to show the menu is open. That's it, simple right?"}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-2xl font-semibold","children":"Resources"}],["$","ul",null,{"className":"list-disc pl-6 max-w-4xl","children":[["$","li","0",{"className":"mt-2","children":[" ",["$","a",null,{"href":"https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp","className":"underline","children":"W3 Schools on how to create a navbar with dropdown"}]," "]}],["$","li","1",{"className":"mt-2","children":[" ",["$","a",null,{"href":"https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents","className":"underline","children":"MDN Web Docs on the DOM"}]," "]}]]}]]}]]}]]}]}],null,["$","$Lc",null,{"children":"$Ld"}]]}],{},null]},null]},null]},null],["$","$3","h",{"children":[null,["$","$3","PKJFEcHssCCshDRfFKYji",{"children":[["$","$Le",null,{"children":"$Lf"}],["$","$L10",null,{"children":"$L11"}],["$","meta",null,{"name":"next-size-adjust"}]]}]]}]]],"m":"$undefined","G":["$12","$undefined"],"s":false,"S":true}
+11:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+f:[["$","meta","0",{"charSet":"utf-8"}]]
+d:null
