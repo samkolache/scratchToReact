@@ -9,26 +9,33 @@ const page = () => {
         title: "Creating a Navigation Bar with dropdown using HTML, CSS, and Javascript",
         learnPoints: [
             'DOM Manipulation and Event Handling',
-            'How to use flexbox to create the basic layout',
-            'HTML semantics'
+            'How to use Flexbox to create the basic layout',
+            'HTML Semantics',
+           ' CSS Positioning'
         ],
         prereqs: [
             "Basic HTML, CSS, and Javascript",
-            <>Completed the <Link href='/learn/basic-nav'>Basic Navbar</Link> tutorial</>
+            <>Completed the <Link href='/learn/basic-nav' className='underline'>Basic Navbar</Link> tutorial</>
         ],
         codeComponent: RawNavDrop,
         htmlTips: [
-            "We first wrap our navbar in a nav container, we do this for accessibility reasons, as screen readers can recognize the nav landmark. This allows our code to also be semantic and allow for better SEO, as search engines will recognize our nav tag.",
-            "We then organize our code into two parts, a left side(the logo) and the right side(nav-links and CTA buttons). This allows use to use the power of flexbox to layout our code better.",
-            "Our nav-links are contained in a unordered list, with each list item being a link to a different page on our website. We use the list format for both accessibility and semantics.",
-            "Also in our right side container, is our group of buttons, contained in a div tag. We will get more into in the CSS, but we group them to use flexbox once again!"
+            "We are using the same HTML from our previous lesson, with a few additions. We want to create a dropdown under our blog nav-link. We will create a flex container in our <ul> to hold our Blog link and a toggle button.",
+            "Within this same container, we will create our dropdown menu, which also includes an <ul> of some different nav links. The reason we created this in the same container is because of our plan to use positioning to correctly place our dropdown. More on that below!",
+            "You may also notice some 'role' attributes added to our container and dropdown container. This allows screen readers to correctly identify what exactly our elements do."
         ],
         cssTips: [
-            "We use the element selector for nav to turn our container into a flexbox container. Within the container, we align our child elements in the center, and to have a gap between them using space-between. We also add some padding to make it less cramped. If this confuses you, check out this link to refresh on flexbox.",
-            "We use all:unset to remove all styling from our links.",
-            "We also transform our unordered list into a flex container, allowing use to have our items side by side with some gap",
-            "Now remember, we have two sides, our left side(logo) and right side(nav-links and buttons), we create a class called “right-cont” and use this to create another flex container! This flex container holds our right content, and we will add some gap on it as well. !",
-            "Last but not least, our button container! We also make this a flex, add some padding and other styles to the button."
+            "We also have the same CSS but with a few changes. Our flex container mentioned previously is created with the 'nav-dropdown' class, with our basic flexbox styling.",
+            "For our dropdown menu, we create a class called 'dropdown', with some good old styling and a position of absolute. If you look at our original 'right-cont' class, we added a relative positioning as well. This will allow us to position our dropdown menu relatively to our container.",
+            "Our dropdown menu also has a class of close, which will be an added default class to hide our dropdown menu(more on this in JS). We also have a 'rotate' class that will be used to rotate the toggle button.",
+            "We also add some basic styling to our nav-links, to make sure they look organized."
+        ],
+        jsTips: [
+            "Our JS is fairly simple, we use the query and ID DOM selectors to store our HTML elements in JS variables. Our elements include the dropdown menu, our toggle button(blog div), and our SVG chevron.",
+            "We add a simple eventListener that toggles and untoggles the close class whenever our toggle button is clicked. We will also toggle the rotate class we had before to show the menu is open. That's it, simple right?",
+        ],
+        resources: [
+            <> <a href = "https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp" className='underline'>W3 Schools on how to create a navbar with dropdown</a> </>,
+            <> <a href = "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents" className='underline'>MDN Web Docs on the DOM</a> </>,
         ]
     }
 

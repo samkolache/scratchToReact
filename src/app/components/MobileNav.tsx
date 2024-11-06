@@ -41,15 +41,6 @@ const MobileNav = ({ isMobileNavOpen, toggleMenu }: MobileNavProps) => {
                 </Link>
                 <ArrowRightCircleIcon className='w-7 h-7' />
             </li>
-            <li className="flex justify-between items-center">
-                <Link
-                    href = "/about"
-                    className= 'block w-full'
-                >
-                    Contact
-                </Link>
-                <ArrowRightCircleIcon className='w-7 h-7' />
-            </li>
         </ul>
     </div>
   )

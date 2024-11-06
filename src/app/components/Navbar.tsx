@@ -20,13 +20,15 @@ const Navbar = () => {
         <div className='flex justify-between items-center px-12 py-6'>
 
     {/* Logo */}
-    <Image 
+    <Link href = "/">
+        <Image 
             src = "/logo.svg"
             alt='company logo'
             width={225}
             height={75}
             className=''
         />
+    </Link>
 
     {/* Nav items */}
     <ul className='items-center space-x-8 text-gray-600 hidden md:flex'>
@@ -42,13 +44,6 @@ const Navbar = () => {
                 href = "/learn"
             >
                 Learn
-            </Link>
-        </li>
-        <li>
-            <Link
-                href = "/about"
-            >
-                Contact
             </Link>
         </li>
     </ul>

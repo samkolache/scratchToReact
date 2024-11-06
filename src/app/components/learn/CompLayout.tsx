@@ -27,13 +27,13 @@ const CompLayout = ({content}) => {
             <h2 className='text-3xl font-bold mb-4'>The Code</h2>
             <content.codeComponent />
         </div>
-        <div className="mt-12 space-y-6">
+        <div className="mt-12 mb-12 space-y-6">
             <h2 className='text-3xl font-bold'>Explanation</h2>
             {/* HTML */}
             <div>
                 <h3 className='text-2xl font-semibold text-brandOrange'>HTML</h3>
                 <ul className='list-disc pl-6 max-w-4xl'>
-                    {content.htmlTips.map((tip, index) => (
+                    {content.htmlTips?.map((tip, index) => (
                         <li className="mt-2" key={index}>{tip}</li>
                     ))}
                 </ul>
@@ -42,8 +42,24 @@ const CompLayout = ({content}) => {
             <div>
                 <h3 className='text-2xl font-semibold text-brandBlue'>CSS</h3>
                 <ul className='list-disc pl-6 max-w-4xl'>
-                {content.cssTips.map((tip, index) => (
+                {content.cssTips?.map((tip, index) => (
                         <li className="mt-2" key={index}>{tip}</li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h3 className='text-2xl font-semibold text-brandYellow'>Javascript</h3>
+                <ul className='list-disc pl-6 max-w-4xl'>
+                {content.jsTips?.map((tip, index) => (
+                        <li className="mt-2" key={index}>{tip}</li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h3 className='text-2xl font-semibold' >Resources</h3>
+                <ul className='list-disc pl-6 max-w-4xl'>
+                {content.resources?.map((resc, index) => (
+                        <li className="mt-2" key={index}>{resc}</li>
                     ))}
                 </ul>
             </div>

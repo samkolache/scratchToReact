@@ -28,16 +28,22 @@ const RawNav = () => {
 </body>
 </html>`;
 
-const cssCode = `nav {
+const cssCode = `
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 10px
+  padding: 20px 10px
 }
 
 a {
-  all: unset;
-  cursor: pointer;
+    text-decoration: none;   
+    color: inherit; 
+    cursor: pointer;
 }
 
 nav > p {
