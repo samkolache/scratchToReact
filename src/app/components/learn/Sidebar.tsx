@@ -44,6 +44,15 @@ const Sidebar = () => {
                 </li>
             </ul>
         </div>
+        <div>
+            <h3 className='text-lg font-semibold'>Forms</h3>
+            <ul className='pl-2'>
+                <li className='flex items-center gap-2'>
+                    <StarIcon className='w-4 h-4 text-yellow-500' />
+                    <Link href = "/learn/form">Basic Form</Link>
+                </li>
+            </ul>
+        </div>
     </div>
   )
 }
