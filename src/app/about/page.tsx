@@ -11,7 +11,7 @@ const About = () => {
           <p className='text-base md:text-lg mt-4'>
             Many people dive into React without a solid grasp of fundamental web development. This site is here 
             to bridge that gap. Each lesson walks you through creating essential components in vanilla HTML, CSS, and JavaScript, and 
-            then demonstrates how to build the same components in React. You’ll see firsthand how React simplifies component creation, 
+            then demonstrates how to build the same components in React. You&apos;ll see firsthand how React simplifies component creation, 
             making development faster and more efficient.
           </p>
         </div>

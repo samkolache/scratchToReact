@@ -1,9 +1,91 @@
 import React from 'react'
-import RawNav from '@/app/components/codePreviews/RawNav';
+import CodePreviewLayout from '@/app/components/learn/CodePreviewLayout';
 import CompLayout from '@/app/components/learn/CompLayout';
 
 
 const page = () => {
+
+    const htmlCode = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Static Site</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <nav>
+        <p>Logo</p>
+        <div class = "right-cont">
+            <ul>
+            <li><a href = "/home">Home</a></li>
+            <li><a href = "/about">About</a></li>
+            <li><a href = "/blog">Blog</a></li>
+        </ul>
+        <div class = "button-cont">
+            <button class = "sign-in-btn">Sign in</button>
+            <button>Sign up</button>
+        </div>
+        </div>
+    </nav>
+    </body>
+    </html>`;
+    
+    const cssCode = `
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 10px
+    }
+    
+    a {
+        text-decoration: none;   
+        color: inherit; 
+        cursor: pointer;
+    }
+    
+    nav > p {
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer
+    }
+    
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      font-weight: semi-bold;
+    }
+    
+    .right-cont {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .button-cont {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .sign-in-btn {
+      border: 1px solid;
+      background: none;
+    }
+    
+    button {
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }`
+
+
     const content = {
         title: "Creating a Navigation Bar with HTML and CSS",
         learnPoints: [
@@ -13,7 +95,7 @@ const page = () => {
         prereqs: [
             "Basic HTML and CSS"
         ],
-        codeComponent: RawNav,
+        codeComponent: <> <CodePreviewLayout html={htmlCode} css={cssCode} /></>,
         htmlTips: [
             "We first wrap our navbar in a nav container, we do this for accessibility reasons, as screen readers can recognize the nav landmark. This allows our code to also be semantic and allow for better SEO, as search engines will recognize our nav tag.",
             "We then organize our code into two parts, a left side(the logo) and the right side(nav-links and CTA buttons). This allows use to use the power of flexbox to layout our code better.",
