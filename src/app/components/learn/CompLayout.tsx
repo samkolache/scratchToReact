@@ -28,6 +28,8 @@ const CompLayout = ({content}) => {
         <div className='mt-12'>
             <h2 className='text-3xl font-bold mb-4'>The Code</h2>
             {content.codeComponent}
+            <p className='mt-2 text-xsm'>* If the component preview isn't loading, try refreshing the page.</p>
+            <p className='mt-2 text-xsm'>* You can adjust the size of the code preview and code by draging the sides!</p>
         </div>
         <div className="mt-12 mb-12 space-y-6">
             <h2 className='text-3xl font-bold'>Explanation</h2>

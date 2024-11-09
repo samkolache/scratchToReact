@@ -42,6 +42,10 @@ const Sidebar = () => {
                     <StarIcon className='w-4 h-4 text-yellow-500' />
                     <Link href = "/learn/accordion">Accordion</Link>
                 </li>
+                <li className='flex items-center gap-2'>
+                    <StarIcon className='w-4 h-4 text-yellow-500' />
+                    <Link href = "/learn/carousel">Carousel</Link>
+                </li>
             </ul>
         </div>
         <div>
