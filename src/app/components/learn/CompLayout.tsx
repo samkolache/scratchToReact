@@ -1,6 +1,7 @@
 import React from 'react'
+import ToggleReact from './ToggleReact'
 
-const CompLayout = ({content}) => {
+const CompLayout = ({content, isReact, setIsReact, reactStatus }) => {
   return (
     <div className='ml-16'>
         <div className='max-w-3xl space-y-4'>
@@ -21,7 +22,11 @@ const CompLayout = ({content}) => {
                     ))}
                 </ul>
             </div>
-            <h2 className='text-3xl font-semibold'><span className='text-brandLightBlue'>React verison</span> coming soon!</h2>
+            {reactStatus ? (
+                <ToggleReact isReact={isReact} setIsReact={setIsReact} />
+            ) : (
+                <h2 className='text-3xl font-semibold'><span className='text-brandLightBlue'>React verison</span> coming soon!</h2>
+            ) }
         <hr />
         </div>
         
@@ -35,7 +40,7 @@ const CompLayout = ({content}) => {
             <h2 className='text-3xl font-bold'>Explanation</h2>
             {/* HTML */}
             <div>
-                <h3 className='text-2xl font-semibold text-brandOrange'>HTML</h3>
+                <h3 className='text-2xl font-semibold text-brandOrange'>{isReact ? "REACT" : "HTML"}</h3>
                 <ul className='list-disc pl-6 max-w-4xl'>
                     {content.htmlTips?.map((tip, index) => (
                         <li className="mt-2" key={index}>{tip}</li>
@@ -44,14 +49,15 @@ const CompLayout = ({content}) => {
             </div>
             {/* CSS */}
             <div>
-                <h3 className='text-2xl font-semibold text-brandBlue'>CSS</h3>
+                <h3 className='text-2xl font-semibold text-brandBlue'>{isReact ? "TAILWIND" : "CSS"}</h3>
                 <ul className='list-disc pl-6 max-w-4xl'>
                 {content.cssTips?.map((tip, index) => (
                         <li className="mt-2" key={index}>{tip}</li>
                     ))}
                 </ul>
             </div>
-            <div>
+            <div
+            className = {isReact ? 'hidden' : "block"}>
                 <h3 className='text-2xl font-semibold text-brandYellow'>Javascript</h3>
                 <ul className='list-disc pl-6 max-w-4xl'>
                 {content.jsTips?.map((tip, index) => (
