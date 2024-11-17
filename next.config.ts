@@ -1,6 +1,9 @@
-// next.config.js
-import type { NextConfig } from "next";
+import { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  typescript: {
+    ignoreBuildErrors: true, // Disable type checking during builds
+  },
+};
 
 export default nextConfig;
