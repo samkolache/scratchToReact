@@ -6,7 +6,7 @@ import { SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview }
 // Define prop types
 interface CodePreviewLayoutProps {
   html?: string;
-  css?: string;
+  css?: string; 
   js?: string;
   react?: string;
 }

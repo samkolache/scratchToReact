@@ -6,7 +6,7 @@ const CompLayout = ({content, isReact, setIsReact, reactStatus }) => {
     <div className='ml-16'>
         <div className='max-w-3xl space-y-4'>
             <h1 className='text-5xl font-bold'>{content.title}</h1>
-            <div>
+            <div> 
                 <h2 className='text-3xl font-semibold'>What you'll learn</h2>
                 <ul className='list-disc pl-6 pt-2'>
                     {content.learnPoints.map((point, index) => (

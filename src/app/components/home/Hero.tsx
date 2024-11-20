@@ -1,33 +1,75 @@
+'use client'
 import Image from "next/image";
+import {easeInOut, motion} from 'framer-motion'
+import Link from "next/link";
 
-const Hero = () => {
+
+export default function Hero  ()  {
+  const textOne = "Level up as a web dev,".split(" ")
+  
+
   return (
-    <section className="py-10 mt-12">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-4 md:px-8">
-        <div className="space-y-6">
-          <h1 className="text-3xl md:text-5xl font-bold">
-            From Raw Code to React Components
+    <section className="py-24 mt-12 slate">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 text-center space-y-16">
+        <div>
+          <h1 className="text-3xl md:text-6xl font-bold">
+          {textOne.map((el, i) => (
+              <motion.span
+              initial = {{opacity: 0}}
+              animate = {{opacity: 1}}
+              transition={{
+                duration: .25,
+                delay: i/10
+              }}
+              key={i}
+              >
+                {el}{" "}
+              </motion.span>
+            ))}
           </h1>
-          <p className="text-base md:text-lg">
-            Strengthen your web development foundations by mastering the basics.
-            Start by learning to create essential web components with HTML, CSS,
-            and JavaScript. Then, take your skills to the next level by building
-            those same components using the powerful React framework, unlocking
-            new possibilities for dynamic, modern applications.
-          </p>
+          <motion.h1
+            className="text-3xl md:text-6xl font-bold mt-4"
+            initial={{ y: -100, scale: 1.2, opacity: 0 }}
+            animate={{ y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.25,
+              delay: 1.25, 
+              ease: [0.16, 1, 0.3, 1], 
+            }}
+          >
+            the <span className="text-brandOrange">right</span> way
+          </motion.h1>
         </div>
-        <div className="hidden md:block">
-          <Image
-            src="/hero-ill.svg"
-            alt="Web design illustration"
-            width={400}
-            height={250}
-            className="w-full max-w-md lg:max-w-lg"
-          />
-        </div>
+          <motion.div 
+          className="flex items-center gap-8 max-w-lg mx-auto"
+          initial = {{opacity: 0, scale: 0.95, y:20}}
+          animate = {{opacity: 1, scale: 1, y:0}}
+          transition={{
+            duration: 0.6,
+            delay: 2,
+            ease: "easeOut"
+          }}
+          >
+            <motion.button 
+            className="px-4 py-4 bg-brandBlue text-white font-medium rounded-lg "
+            whileHover={{scale: 1.05}}
+            whileTap={{scale: .95}}
+            transition={{ duration: 0.2 }}
+            >
+              <Link href = "/learn">Start learning for free</Link>
+            </motion.button>
+            <motion.button 
+            className="px-4 py-4 bg-gray-700 text-white font-medium rounded-lg"
+            whileHover={{scale: 1.05}}
+            whileTap={{scale: .95}}
+            transition={{ duration: 0.2 }}
+            >
+              <Link href = "/about">Learn more about us</Link>
+            </motion.button>
+          </motion.div>
       </div>
     </section>
   );
 };
 
-export default Hero;
+
