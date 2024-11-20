@@ -1,13 +1,24 @@
 import React from 'react'
 import Link from 'next/link'
-import { StarIcon } from '@heroicons/react/16/solid'
+import { StarIcon, QuestionMarkCircleIcon } from '@heroicons/react/16/solid'
 
 const Sidebar = () => {
   return (
     <div className='flex flex-col min-h-screen space-y-5 border-r w-72 p-4'>
+        <h2 className='text-xl font-bold' >Before you start</h2>
+        <ul className='pl-2'>
+                <li className='flex items-center gap-2'>
+                    <QuestionMarkCircleIcon className='w-4 h-4 text-brandBlue' />
+                    <Link href = "/learn/prereqs">Prerequesties</Link>
+                </li>
+                <li className='flex items-center gap-2'>
+                    <QuestionMarkCircleIcon className='w-4 h-4 text-brandBlue' />
+                    <Link href = "/learn/faq">FAQ</Link>
+                </li>
+            </ul>
         <h2 className='text-xl font-bold' >Components List</h2>
         <div>
-            <h3 className='text-lg font-semibold'>Navigation</h3>
+            <h3 className='text-lg font-medium'>Navigation</h3>
             <ul className='pl-2'>
                 <li className='flex items-center gap-2'>
                     <StarIcon className='w-4 h-4 text-yellow-500' />
@@ -28,7 +39,7 @@ const Sidebar = () => {
             </ul>
         </div>
         <div>
-            <h3 className='text-lg font-semibold'>Data Display</h3>
+            <h3 className='text-lg font-medium'>Data Display</h3>
             <ul className='pl-2'>
                 <li className='flex items-center gap-2'>
                     <StarIcon className='w-4 h-4 text-yellow-500' />
@@ -49,7 +60,7 @@ const Sidebar = () => {
             </ul>
         </div>
         <div>
-            <h3 className='text-lg font-semibold'>Forms</h3>
+            <h3 className='text-lg font-medium'>Forms</h3>
             <ul className='pl-2'>
                 <li className='flex items-center gap-2'>
                     <StarIcon className='w-4 h-4 text-yellow-500' />

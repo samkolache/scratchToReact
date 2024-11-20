@@ -1,4 +1,4 @@
-// app/layout.tsx (or RootLayout.js if using JavaScript)
+
 
 import { Source_Code_Pro } from 'next/font/google';
 import "./globals.css";

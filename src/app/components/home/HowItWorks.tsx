@@ -96,32 +96,11 @@ const HowItWorksGraph = () => {
           </div>
         </div>
 
-        <motion.div
-          className="relative p-8 rounded-lg overflow-hidden"
-          style={{
-            borderWidth: "1px",
-            borderStyle: "solid",
-            borderRadius: "8px",
-          }}
-          animate={{
-            boxShadow: [
-              "0 0 0 2px #264DE4",
-              "0 0 0 2px #E34C26",
-              "0 0 0 2px #53C1DE",
-              "0 0 0 2px #F7DF1E",
-              "0 0 0 2px #264DE4",
-            ],
-          }}
-          transition={{
-            duration: 5, 
-            repeat: Infinity, 
-            ease: "linear",
-          }}
-        >
+        <div className="relative p-8 rounded-lg overflow-hidden">
           {/* Content */}
           <p className="text-lg">{steps[selected].content}</p>
           <div className="flex gap-6 justify-center mt-8">{steps[selected].images}</div>
-        </motion.div>
+        </div>
 
 
       </div>
