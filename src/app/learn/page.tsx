@@ -17,7 +17,7 @@ const Learn = () => {
             <span className='text-brandYellow font-semibold'> JS</span> 
           </div>
           <div className='text-center'>
-            <span className='text-brandLightBlue font-semibold '> React JS</span> and <span className='text-brandLightBlue font-semibold'>Tailwind CSS</span>
+            <span className='text-brandLightBlue font-semibold '> React JS</span> and <span className='text-[#38BDF8] font-semibold'>Tailwind CSS</span>
           </div>
         <p className='font-light text-sm sm:text-base text-center'>
           * Before diving into these sections, make sure you have a basic understanding of HTML, CSS, and JS. Once you learn how to code these components from scratch, you can learn how it works in React and Tailwind CSS!

@@ -7,7 +7,7 @@ import CompLayout from '@/app/components/learn/CompLayout';
 const Page = () => {
 
     const [isReact, setIsReact] = useState(false)
-
+ 
     const htmlCode = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -18,13 +18,13 @@ const Page = () => {
     </head>
     <body>
       <nav>
-        <p>Logo</p>
-        <div class = "right-cont">
-            <ul>
-            <li><a href = "/home">Home</a></li>
-            <li><a href = "/about">About</a></li>
-            <li><a href = "/blog">Blog</a></li>
-        </ul>
+        <a href = "/">Logo</p>
+        <div class = "right-cont"> 
+            <ul role = "menubar">
+              <li role="none"><a href = "/home" role="menuitem">Home</a></li>
+              <li role="none"><a href = "/about" role="menuitem">About</a></li>
+              <li role="none"><a href = "/blog" role="menuitem">Blog</a></li>
+            </ul>
         <div class = "button-cont">
             <button class = "sign-in-btn">Sign in</button>
             <button>Sign up</button>
@@ -38,12 +38,14 @@ const Page = () => {
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px 10px
+      padding: 20px
     }
     
     a {
@@ -89,15 +91,14 @@ const Page = () => {
     }`
 
     const reactCode = `import React from 'react'
-    import "./App.css";
-
+import "./App.css";
 
 
 const page = () => {
   return (
     <nav className= "flex items-center justify-between py-4 px-6 border-b">
       <a href="/" className="logo">Logo</a>
-      <ul className="flex gap-6">
+      <ul className="flex gap-6" role='menubar'>
         <Navlinks href="/about" name="Home" />
         <Navlinks href="/about" name="About" />
         <Navlinks href="/about" name="Blog" />
@@ -112,8 +113,8 @@ const page = () => {
 
 const Navlinks = ({ href, name }) => {
   return (
-    <li>
-      <a className="hover:underline" href={href}>
+    <li role='none'>
+      <a className="hover:underline" href={href} role='menuitem'>
         {name}
       </a>
     </li>
@@ -127,7 +128,7 @@ export default page;
 
 
     const content = {
-        title: isReact ? "Creating a Navigation bar using React and CSS" : "Creating a Navigation Bar using HTML and CSS ",
+        title: isReact ? "Creating a Navigation bar using React and TailwindCSS" : "Creating a Navigation Bar using HTML and CSS ",
         learnPoints: isReact
         ? [
             "How to use components to create reusable code",
@@ -157,37 +158,29 @@ export default page;
         htmlTips: isReact 
         ?
         [
-          "We first wrap our navbar in a nav element to maintain accessibility and semantics, just like in HTML. React allows us to break the structure into reusable components. For example, the Navlinks component simplifies creating consistent navigation links by passing props like href and name. This keeps the code cleaner and avoids repetition.",
-          "We organize the navbar into two parts: a left section for the logo and a right section for navigation links and CTA buttons. Using div and ul tags in JSX, we ensure a clear structure. React’s className attribute is used for applying styles, which directly maps to CSS classes.",
-          "The auth-buttons container groups the buttons using div for layout flexibility. Props are passed to create reusable links, and dynamic JSX ensures updates happen efficiently when props or states change."
+          "Our JSX is quite similar to the vanilla HTML markup from before, but we've made our code more efficient and reusable by introducing a custom component, <Navlinks />, within our <nav> element",
+          "Instead of repeating the same markup for each navigation link, we’ve created a single <Navlinks /> component. This component accepts two props: href, which specifies the URL the link points to, and name, which is the text displayed for the link. By passing these props when initializing the component, we can dynamically render three instances of <Navlinks /> for 'Home,' 'About,' and 'Blog,' without duplicating code."
         ]
         :
         [
-            "We first wrap our navbar in a nav container, we do this for accessibility reasons, as screen readers can recognize the nav landmark. This allows our code to also be semantic and allow for better SEO, as search engines will recognize our nav tag.",
-            "We then organize our code into two parts, a left side(the logo) and the right side(nav-links and CTA buttons). This allows use to use the power of flexbox to layout our code better.",
-            "Our nav-links are contained in a unordered list, with each list item being a link to a different page on our website. We use the list format for both accessibility and semantics.",
-            "Also in our right side container, is our group of buttons, contained in a div tag. We will get more into the CSS, but we group them to use Flexbox once again!"
+          "Let's start with semantics, our navbar will be contained in the HTML tag <nav>. This allows screen readers and other assistive technologies to recognize where the navigation bar is.",
+          "Everything that should redirect the user(nav-links) will be wrapped in a <a> which will define our hyperlinks. You will notice our navigation links are an unordered list, <ul>. Back to semantics, this shows assistive technology that we have a group of links. This also makes our code easier to read, instead of using tons of <div>s.",
+          "Within our unordered list, we add ARIA roles to each <li> and <a> tag. We need to tell assistive technologies this isn't just a list, rather, they are navigation items. We give 'none' to <li> to show they have no purpose, and 'menuitem' for each <a> to show they are menu items",
+          "We will be using Flexbox to style our navbar, which is why we have two sections. Our logo will be on the left side, and our links and buttons will be on the right. That's why we contain our right side in a div with the class 'right-cont'"
         ],
         cssTips: isReact ?
         [
-          "We use a nav element to wrap the navbar, ensuring semantic HTML and accessibility, which is a best practice for navigation structure.",
-          "React components like Navlinks allow for reusable navigation links by passing props such as href and name. This keeps the code concise and avoids repetition.",
-          "The navbar layout is split into two parts: the left for the logo, styled with flex and alignment classes, and the right for navigation links and buttons, organized with ul for structure.",
-          "Tailwind classes like flex, space-x-*, text-*, and bg-* are applied using the className attribute to manage layout, spacing, and styling seamlessly.",
-          "Buttons are grouped within a div for flexibility in layout, styled with Tailwind for padding, hover effects, and alignment.",
-          "Dynamic updates happen through React props and state, enabling efficient changes to styles or content without manual updates."
+          "Our styling is very similar to the vanilla CSS, so let's just go over some new things we added.",
+          "We added a border to the bottom of our navbar to make it separated from the rest of our content(even though we have nothing else). Instead of a bland grey background, we use Tailwind's built-in colors to give our 'sign in' <button> a nice blue color.",
+          "Finally, we add a hover effect to underline the nav item the user is about to click on. Tailwind makes this so easy with the built in 'hover:' class."
         ]
         :
         [
-            "We will first reset all default styles in our document, by selecting everything with the universal selector. With this selected, we will set the margin and padding to 0, to have fewer problems with our overall layout.",
-            "We use the element selector for nav to turn our container into a flexbox container. Within the container, we align our child elements in the center and have a gap between them using space-between. We also added some padding to make it less cramped. If this confuses you, check out the resources below to refresh on Flexbox.",
-            "On all of our a tags, we reset its style by applying text-decoration: none and its color to inherit",
-            "We also transform our unordered list into a flex container, allowing us to have our items side by side with some gap.",
-            "Now remember, we have two sides, our left side(logo) and right side(nav-links and buttons), we create a class called “right-cont” and use this to create another flex container! This flex container holds our right content, and we will add some gap on it as well. !",
-            "Last but not least, our button container! We also make this a flex, add some padding and other styles to the button."
-        ],
-        jsTips: [
-            "No JS required!"
+            "Let's reset some styles globally so we don't have unpredictable behavior. If you don't understand why we do this, check out the first link in the resources below.",
+            "We will make our <nav> a flex container, this will affect its direct children(our logo and right-cont <div>). We will center our children and use 'justify-between' to create space in the middle. Add some padding and we have created our outer flex layout, great work!",
+            "For our <a> tags, we will erase its default styling to make it look cleaner. We will also do this for our <ul> tag as well.",
+            "We need to create another flex layout, this time, on our 'right-cont' <div>. We will make it a flex container, align the items vertically, and add a bit of space. Now within our 'right-con' <div>, we have two more flex layouts, flexception! Both our <ul> and 'button-cont' <div> will be flex containers with some gap.",
+            "Finally, we'll add some styles to both of our buttons and style our sign-in <button> with no background. That's it!"
         ],
         resources: isReact ?  
         [
@@ -197,6 +190,7 @@ export default page;
         ]
         :
         [
+            <> <a href = "https://css-tricks.com/box-sizing/?utm_source=chatgpt.com" className='underline'>CSS Tricks on the box-sizing style</a> </>,
             <> <a href = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" className='underline'>MDN Web Docs on the navigation element</a> </>,
             <> <a href = "https://css-tricks.com/snippets/css/a-guide-to-flexbox/" className='underline'>CSS Tricks guide on Flexbox</a> </>
 
