@@ -5,7 +5,7 @@ import { StarIcon, QuestionMarkCircleIcon } from '@heroicons/react/16/solid'
 const Sidebar = () => {
   return (
     <div className='flex flex-col min-h-screen space-y-5 border-r w-72 p-4'>
-        <h2 className='text-xl font-bold' >Before you start</h2>
+        {/* <h2 className='text-xl font-bold' >Before you start</h2>
         <ul className='pl-2'>
                 <li className='flex items-center gap-2'>
                     <QuestionMarkCircleIcon className='w-4 h-4 text-brandBlue' />
@@ -15,7 +15,7 @@ const Sidebar = () => {
                     <QuestionMarkCircleIcon className='w-4 h-4 text-brandBlue' />
                     <Link href = "/learn/faq">FAQ</Link>
                 </li>
-            </ul>
+            </ul> */}
         <h2 className='text-xl font-bold' >Components List</h2>
         <div>
             <h3 className='text-lg font-medium'>Navigation</h3>

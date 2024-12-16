@@ -1,9 +1,12 @@
-import React from 'react'
+'use client'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import CodePreviewLayout from '@/app/components/learn/CodePreviewLayout'
 import CompLayout from '@/app/components/learn/CompLayout'
 
-const page = () => {
+const Page = () => {
+
+  const [isReact, setIsReact] = useState(false)
 
 
     const htmlCode = `<!DOCTYPE html>
@@ -16,36 +19,33 @@ const page = () => {
     </head>
     <body>
       <nav>
-            <p>Logo</p>
-            <div class = "right-cont">
-              <ul class = "nav-links">
-                <li><a href = "/home">Home</a></li>
-                <li><a href = "/about">About</a></li>
-                <li>
-                  <div class = "nav-dropdown" role = "button">
-                     <a href = "/blog">Blog</a>
-                     <svg id = "chevron" xmlns="http://www.w3.org/2000/svg" 
-                     fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
-                     width = "15px" height = "15px">
-                        <path stroke-linecap="round" stroke-linejoin="round" 
-                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
-                    <div class="dropdown close" role = "dropdown-menu">
-                      <ul class = "drop-links ">
-                         <li><a href = "/item-1">Item #1</a></li>
-                         <li><a href = "/item-2">Item #2</a></li>
-                         <li><a href = "/item-3">Item #3</a></li>
-                      </ul>
-                   </div>
-                  </div>
-              </li>
-              </ul>
-              <div class = "button-cont">
-                <button class = "sign-in-btn">Sign in</button>
-                <button>Sign up</button>
+        <p>Logo</p>
+        <div class="right-cont">
+          <ul class="nav-links">
+            <li role="none"><a href="/home" role="menuitem">Home</a></li>
+            <li role="none"><a href="/about" role="menuitem">About</a></li>
+            <li role="none">
+              <div class="nav-dropdown" role="button">
+                <a href="/blog" role="menuitem">Blog</a>
+                <svg id="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="15px" height="15px">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+                <div class="dropdown close" role="dropdown-menu">
+                  <ul class="drop-links ">
+                    <li><a href="/item-1">Item #1</a></li>
+                    <li><a href="/item-2">Item #2</a></li>
+                    <li><a href="/item-3">Item #3</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-        </nav>
+            </li>
+          </ul>
+          <div class="button-cont">
+            <button class="sign-in-btn">Sign in</button>
+            <button>Sign up</button>
+          </div>
+        </div>
+</nav>
     <script src="script.js"></script>
     </body>
     </html>`;
@@ -53,6 +53,7 @@ const page = () => {
     const cssCode = `* {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
       
       nav {
@@ -139,7 +140,6 @@ const page = () => {
         font-weight: semi-bold;
       }`
     
-    
     const jsCode = `const dropdown = document.querySelector('.dropdown') 
     const blogItem = document.querySelector('.nav-dropdown') 
     const chevron = document.getElementById('chevron')
@@ -149,33 +149,50 @@ const page = () => {
       chevron.classList.toggle("rotate");
     })`
 
+    const reactCode = ``
+
     const content = {
-        title: "Creating a Navigation Bar with dropdown using HTML, CSS, and Javascript",
-        learnPoints: [
+        title:  isReact ? "Creating a Navigation Bar with a dropdown using React and TailwindCSS" : "Creating a Navigation Bar with a dropdown using HTML, CSS, and Javascript",
+        learnPoints: isReact ?
+        [
+          "How useState works in React",
+          "How to pass state through props",
+          "How to use components to create reusable code"
+        ]
+        :
+        [
             'DOM Manipulation and Event Handling',
             'How to use Flexbox to create the basic layout',
             'HTML Semantics',
            ' CSS Positioning'
         ],
-        prereqs: [
+        prereqs: isReact ?
+        [
+          "HTML, CSS, and Javascript",
+          "Basic knowledge of React",
+          "Basic knowledge of State"
+        ]
+        :
+        [
             "Basic HTML, CSS, and Javascript",
             <>Completed the <Link href='/learn/basic-nav' className='underline'>Basic Navbar</Link> tutorial</>
         ],
         codeComponent: <> <CodePreviewLayout html={htmlCode} css={cssCode} js = {jsCode} /></>,
         htmlTips: [
-            "We are using the same HTML from our previous lesson, with a few additions. We want to create a dropdown under our blog nav-link. We will create a flex container in our <ul> to hold our Blog link and a toggle button.",
-            "Within this same container, we will create our dropdown menu, which also includes an <ul> of some different nav links. The reason we created this in the same container is because of our plan to use positioning to correctly place our dropdown. More on that below!",
-            "You may also notice some 'role' attributes added to our container and dropdown container. This allows screen readers to correctly identify what exactly our elements do."
+            "If you haven't already, check out the previous tutorial, as we won't go over any repeated information. Ready? Let's hop in!",
+            "Our first change is creating our dropdown menu item, we create a <div> called 'nav-dropdown'. For accessibility purposes, we will give this div the role of 'button' so assistive technology knows it should be clicked. I added an chevron SVG here, but you can use a icon library to import your icon.",
+            "The last major change is actually creating our dropdown menu. We will create a <div> with the class 'dropdown' and the role of 'dropdown-menu'. We'll add an unorded list to keep the same pattern and we will style accordingly. If you're confused about the class 'close', don't worry, we'll discuss that in our CSS section."
         ],
         cssTips: [
-            "We also have the same CSS but with a few changes. Our flex container mentioned previously is created with the 'nav-dropdown' class, with our basic flexbox styling.",
-            "For our dropdown menu, we create a class called 'dropdown', with some good old styling and a position of absolute. If you look at our original 'right-cont' class, we added a relative positioning as well. This will allow us to position our dropdown menu relatively to our container.",
-            "Our dropdown menu also has a class of close, which will be an added default class to hide our dropdown menu(more on this in JS). We also have a 'rotate' class that will be used to rotate the toggle button.",
-            "We also add some basic styling to our nav-links, to make sure they look organized."
+            "Using the same CSS file as 'basic nav', we first modify our 'right-cont' to have a position of relative. We do this so we can position our dropdown absolutely to it(check out the resources if you don't get this concept yet). Our newly created 'nav-dropdown' container will be a flex continer to position the text and chevron next to each other. We will also add a modifier/state class called 'rotate' to change the chevron's direction when the dropdown is opened.",
+            "To style our actual dropdown menu, let's add a grey background, a nice curved border, some padding, and a width. We will add a modifer/state class called 'close' to hider our dropdown initially.",
+            "Then finally, for our actual links, we will make our <ul> a flex container once again! This time, however, we will align our items vertically, instead of horizontal."
         ],
         jsTips: [
-            "Our JS is fairly simple, we use the query and ID DOM selectors to store our HTML elements in JS variables. Our elements include the dropdown menu, our toggle button(blog div), and our SVG chevron.",
-            "We add a simple eventListener that toggles and untoggles the close class whenever our toggle button is clicked. We will also toggle the rotate class we had before to show the menu is open. That's it, simple right?",
+          "We have some fairly simple JS to go over. Let's first first do some DOM referencing, by storing our dropdown, blog nav item, and our chevron",
+          "Then, all we have to do is add a click event to our blog nav item to toggle some classes. By default, we have the close class on our dropdown menu and no class on our chevron. Every time we click on our nav-item, we will toggle these classes to hide/show the dropdown menu and rotate the chevron",
+          "That's it, congrats!"
+
         ],
         resources: [
             <> <a href = "https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp" className='underline'>W3 Schools on how to create a navbar with dropdown</a> </>,
@@ -185,9 +202,9 @@ const page = () => {
 
   return (
     <div>
-    <CompLayout content={content} />
+    <CompLayout content={content} isReact = {isReact} setIsReact ={setIsReact} reactStatus={true} />
     </div>
   )
 }
 
-export default page
+export default Page
