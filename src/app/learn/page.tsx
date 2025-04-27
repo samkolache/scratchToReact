@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import FAQ from '../components/learn/FAQ'
+import FAQ from '../../components/learn/FAQ'
 import Image from 'next/image'
 import Link from 'next/link'
 import {motion} from 'framer-motion'

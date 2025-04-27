@@ -1,7 +1,7 @@
 'use client'
 import React, {useState} from 'react'
-import CodePreviewLayout from '@/app/components/learn/CodePreviewLayout';
-import CompLayout from '@/app/components/learn/CompLayout';
+import CodePreviewLayout from '@/components/learn/CodePreviewLayout';
+import CompLayout from '@/components/learn/CompLayout';
 
 
 const Page = () => {
@@ -148,13 +148,10 @@ export default page;
         [
           "Basic HTML and CSS"
         ],
-        codeComponent: (
-          <CodePreviewLayout
-          html = {isReact ? undefined : htmlCode}
-          css = {isReact ? undefined : cssCode}
-          react = {isReact ? reactCode : undefined}
-          />
-        ),
+        html: isReact ? undefined : htmlCode,
+        css: isReact ? undefined : cssCode,
+        js: undefined, 
+        react: isReact ? reactCode : undefined,
         htmlTips: isReact 
         ?
         [

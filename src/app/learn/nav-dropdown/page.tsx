@@ -1,8 +1,8 @@
 'use client'
 import React, {useState} from 'react'
 import Link from 'next/link'
-import CodePreviewLayout from '@/app/components/learn/CodePreviewLayout'
-import CompLayout from '@/app/components/learn/CompLayout'
+import CodePreviewLayout from '@/components/learn/CodePreviewLayout'
+import CompLayout from '@/components/learn/CompLayout'
 
 const Page = () => {
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import CodePreviewLayout from '@/app/components/learn/CodePreviewLayout'
-import CompLayout from '@/app/components/learn/CompLayout'
+import CodePreviewLayout from '@/components/learn/CodePreviewLayout'
+import CompLayout from '@/components/learn/CompLayout'
 
 const page = () => {
 
