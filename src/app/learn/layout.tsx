@@ -4,6 +4,9 @@ import Sidebar from '../../components/learn/Sidebar';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
+import { TutorialProvider } from '@/contexts/TutorialContext'
+
+
 export default function LearnLayout({
   children,
 }: {
@@ -11,15 +14,16 @@ export default function LearnLayout({
 }) {
   return (
     <>
-        <Navbar />
+      <Navbar />
+      <TutorialProvider>
         <div className="grid grid-cols-[auto,1fr]">
-        <Sidebar />
-        <main className="mt-12">
+          <Sidebar />
+          <main className="mt-12">
             {children}
-        </main>
+          </main>
         </div>
-        <Footer />
+      </TutorialProvider>
+      <Footer />
     </>
-    
-  );
+  )
 }

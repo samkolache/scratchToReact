@@ -3,7 +3,7 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import { SandpackProvider, SandpackLayout, SandpackCodeEditor, SandpackPreview } from "@codesandbox/sandpack-react";
 
 
-// Define prop types
+
 interface CodePreviewLayoutProps {
   html?: string;
   css?: string;  

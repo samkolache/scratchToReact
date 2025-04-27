@@ -1,4 +1,3 @@
-// components/learn/tutorial/CodePreview.tsx
 import React from 'react';
 import CodePreviewLayout from '../CodePreviewLayout';
 

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTutorialContext } from '@/contexts/TutorialContext'
+
 
 import ToggleReact from './ToggleReact'
 
@@ -11,7 +13,10 @@ import ResourceLinks from './tutorial/ResourcesLink'
 
 import clsx from 'clsx'
 
-const CompLayout = ({ content, isReact, setIsReact, reactStatus }) => {
+const CompLayout = ({ content, reactStatus }) => {
+
+    const { isReactMode } = useTutorialContext()
+
     return (
         <div className='ml-16'>
             <div className='max-w-4xl space-y-4'>
@@ -19,7 +24,7 @@ const CompLayout = ({ content, isReact, setIsReact, reactStatus }) => {
                 <LearningPoints points={content.learnPoints} />
                 <Preqs items={content.prereqs} />
                 {reactStatus ? (
-                    <ToggleReact isReact={isReact} setIsReact={setIsReact} />
+                    <ToggleReact />
                 ) : (
                     <h2 className='text-3xl font-semibold'><span className='text-brandLightBlue'>React verison</span> coming soon!</h2>
                 )}
@@ -27,30 +32,26 @@ const CompLayout = ({ content, isReact, setIsReact, reactStatus }) => {
             </div>
 
             <CodePreview
-                html={isReact ? undefined : content.html}
-                css={isReact ? undefined : content.css}
-                js={isReact ? undefined : content.js}
-                react={isReact ? content.react : undefined}
+                html={isReactMode ? undefined : content.html}
+                css={isReactMode ? undefined : content.css}
+                js={isReactMode ? undefined : content.js}
+                react={isReactMode ? content.react : undefined}
             />
             <div className="mt-12 mb-12 space-y-6">
                 <h2 className='text-3xl font-bold'>Explanation</h2>
                 <ExplanationSection
-                    title={isReact ? "REACT" : "HTML"}
+                    title={isReactMode ? "REACT" : "HTML"}
                     tips={content.htmlTips}
-                    isReact={isReact}
+                    isReact={isReactMode}
                     type="html"
                 />
-
-                {/* CSS/Tailwind Section */}
                 <ExplanationSection
-                    title={isReact ? "TAILWIND" : "CSS"}
+                    title={isReactMode ? "TAILWIND" : "CSS"}
                     tips={content.cssTips}
-                    isReact={isReact}
+                    isReact={isReactMode}
                     type="css"
                 />
-
-                {/* JS Section (hidden for React) */}
-                {!isReact && content.jsTips && (
+                {!isReactMode && content.jsTips && (
                     <ExplanationSection
                         title="JAVASCRIPT"
                         tips={content.jsTips}

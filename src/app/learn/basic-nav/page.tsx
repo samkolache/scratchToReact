@@ -1,12 +1,13 @@
 'use client'
 import React, {useState} from 'react'
-import CodePreviewLayout from '@/components/learn/CodePreviewLayout';
 import CompLayout from '@/components/learn/CompLayout';
+import { useTutorialContext } from '@/contexts/TutorialContext'
 
 
 const Page = () => {
 
-    const [isReact, setIsReact] = useState(false)
+    const { isReactMode } = useTutorialContext()
+
  
     const htmlCode = `<!DOCTYPE html>
     <html lang="en">
@@ -89,7 +90,6 @@ const Page = () => {
       border: none;
       cursor: pointer;
     }`
-
     const reactCode = `import React from 'react'
 import "./App.css";
 
@@ -128,8 +128,8 @@ export default page;
 
 
     const content = {
-        title: isReact ? "Creating a Navigation bar using React and TailwindCSS" : "Creating a Navigation Bar using HTML and CSS ",
-        learnPoints: isReact
+        title: isReactMode ? "Creating a Navigation bar using React and TailwindCSS" : "Creating a Navigation Bar using HTML and CSS ",
+        learnPoints: isReactMode
         ? [
             "How to use components to create reusable code",
             "How to pass props between components",
@@ -138,7 +138,7 @@ export default page;
             "Proper HTML semantics for creating a NavBar",
             "How to use Flexbox to create the basic layout",
           ],
-        prereqs: isReact 
+        prereqs: isReactMode 
         ?
         [
             "HTML, CSS, and Javascript",
@@ -148,11 +148,11 @@ export default page;
         [
           "Basic HTML and CSS"
         ],
-        html: isReact ? undefined : htmlCode,
-        css: isReact ? undefined : cssCode,
+        html: isReactMode ? undefined : htmlCode,
+        css: isReactMode ? undefined : cssCode,
         js: undefined, 
-        react: isReact ? reactCode : undefined,
-        htmlTips: isReact 
+        react: isReactMode ? reactCode : undefined,
+        htmlTips: isReactMode 
         ?
         [
           "Our JSX is quite similar to the vanilla HTML markup from before, but we've made our code more efficient and reusable by introducing a custom component, <Navlinks />, within our <nav> element",
@@ -165,7 +165,7 @@ export default page;
           "Within our unordered list, we add ARIA roles to each <li> and <a> tag. We need to tell assistive technologies this isn't just a list, rather, they are navigation items. We give 'none' to <li> to show they have no purpose, and 'menuitem' for each <a> to show they are menu items",
           "We will be using Flexbox to style our navbar, which is why we have two sections. Our logo will be on the left side, and our links and buttons will be on the right. That's why we contain our right side in a div with the class 'right-cont'"
         ],
-        cssTips: isReact ?
+        cssTips: isReactMode ?
         [
           "Our styling is very similar to the vanilla CSS, so let's just go over some new things we added.",
           "We added a border to the bottom of our navbar to make it separated from the rest of our content(even though we have nothing else). Instead of a bland grey background, we use Tailwind's built-in colors to give our 'sign in' <button> a nice blue color.",
@@ -179,7 +179,7 @@ export default page;
             "We need to create another flex layout, this time, on our 'right-cont' <div>. We will make it a flex container, align the items vertically, and add a bit of space. Now within our 'right-con' <div>, we have two more flex layouts, flexception! Both our <ul> and 'button-cont' <div> will be flex containers with some gap.",
             "Finally, we'll add some styles to both of our buttons and style our sign-in <button> with no background. That's it!"
         ],
-        resources: isReact ?  
+        resources: isReactMode ?  
         [
           <> <a href = "https://react.dev/" className='underline'>The offcial React Docs</a> </>,
           <> <a href = "https://v2.tailwindcss.com/docs" className='underline'>The offcial Tailwind Docs</a> </>
@@ -196,7 +196,7 @@ export default page;
 
 
   return (
-    <CompLayout content={content} isReact = {isReact} setIsReact ={setIsReact} reactStatus={true} />
+    <CompLayout content={content} reactStatus={true} />
   )
 }
 
