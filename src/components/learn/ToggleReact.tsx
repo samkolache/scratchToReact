@@ -7,9 +7,6 @@ import { useTutorialContext } from '@/contexts/TutorialContext'
 const ToggleReact = () => {
   const { isReactMode, toggleReactMode } = useTutorialContext()
 
-
-    
-
   return (
     <div className='flex items-center gap-4'>
         <div 

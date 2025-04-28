@@ -1,7 +1,9 @@
-
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 import { Source_Code_Pro } from 'next/font/google';
 import "./globals.css";
+import { AuthProvider } from '@/contexts/AuthContext';
 
 const sourceCodePro = Source_Code_Pro({
   subsets: ['latin'],
@@ -17,7 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={sourceCodePro.className}>
       <body>
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
+        
       </body>
     </html>
   );

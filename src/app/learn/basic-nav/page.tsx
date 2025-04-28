@@ -19,7 +19,8 @@ const Page = () => {
     </head>
     <body>
       <nav>
-        <a href = "/">Logo</p>
+        <a href = "/">Logo</a>
+        
         <div class = "right-cont"> 
             <ul role = "menubar">
               <li role="none"><a href = "/home" role="menuitem">Home</a></li>
@@ -128,7 +129,7 @@ export default page;
 
 
     const content = {
-        title: isReactMode ? "Creating a Navigation bar using React and TailwindCSS" : "Creating a Navigation Bar using HTML and CSS ",
+        title: isReactMode ? "Creating a Navigation bar using React and TailwindCSS" : "Creating a Navigation Bar using HTML and CSS",
         learnPoints: isReactMode
         ? [
             "How to use components to create reusable code",

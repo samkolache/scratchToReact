@@ -7,8 +7,10 @@ type TutorialContextType = {
   setReactMode: (value: boolean) => void
 }
 
+//create the context
 const TutorialContext = createContext<TutorialContextType | undefined>(undefined)
 
+//create the copmonent that gives the data
 export const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isReactMode, setIsReactMode] = useState(false)
 

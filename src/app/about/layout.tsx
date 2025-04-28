@@ -10,11 +10,11 @@ export default function AboutLayout({
 }) {
   return (
     <>
-        <Navbar />
+        
         <main className="mt-12">
             {children}
         </main>
-        <Footer />
+   
     </>
     
   );

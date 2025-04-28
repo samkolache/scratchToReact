@@ -14,7 +14,6 @@ export default function LearnLayout({
 }) {
   return (
     <>
-      <Navbar />
       <TutorialProvider>
         <div className="grid grid-cols-[auto,1fr]">
           <Sidebar />
@@ -23,7 +22,6 @@ export default function LearnLayout({
           </main>
         </div>
       </TutorialProvider>
-      <Footer />
     </>
   )
 }
